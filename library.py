@@ -151,7 +151,8 @@ class LibraryManagement:
         self.txtBox.grid(row=0, column=4)
 
         listbooks = ["Python Crash Course", "Programming with Jabed", "CS50 Python", "Steve Jobs",
-                     "Love for imperfect things", "Machine Learning", "Jupyter Notebook", ""]
+                     "Love for imperfect things", "Machine Learning", "Jupyter Notebook", "Numpy Tutorial",
+                     "Opencv Python"]
 
         # ======================Information Desk======================
 
