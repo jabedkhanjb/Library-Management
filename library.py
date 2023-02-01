@@ -158,7 +158,8 @@ class LibraryManagement:
                      "Love for imperfect things", "Machine Learning", "Jupyter Notebook", "Numpy Tutorial",
                      "Opencv Python", "Compiler Design", "Computer Networks", "Automation", "Anaconda3",
                      "Object Oriented Program", "Structure Programming", "Software Engineering", "Theory of Computation",
-                     "Data Structure", "Electronics-1", ""]
+                     "Data Structure", "Electronics-1", "Multimedia", "Operation System", "Peripheral",
+                     "Visual Programming", "Algorithm Design", "Assembly Language", "Microprocessor"]
         listBox = Listbox(DataFrameRight, font=("times new roman", 12, "bold"), width=25, height=15)
         listBox.grid(row=0, column=0, padx=4)
 
