@@ -147,8 +147,8 @@ class LibraryManagement:
 
         # ============================DataFrame Right Inside============================
         self.txtBox = Text(DataFrameRight, font=("time new roman", 12, "bold"),
-                           width=30, height=15)
-        self.txtBox.grid(row=0, column=4, padx=4, pady=6)
+                           width=25, height=16)
+        self.txtBox.grid(row=0, column=4, padx=6, pady=2)
 
         # ====================Scroll bar Right Frame list====================
         listscrollbar = Scrollbar(DataFrameRight)
@@ -156,12 +156,16 @@ class LibraryManagement:
 
         listbooks = ["Python Crash Course", "Programming with Jabed", "CS50 Python", "Steve Jobs",
                      "Love for imperfect things", "Machine Learning", "Jupyter Notebook", "Numpy Tutorial",
-                     "Opencv Python"]
-        listBox = Listbox(DataFrameRight, font=("times new roman", 12, "bold"), width=20, height=16)
+                     "Opencv Python", "Compiler Design", "Computer Networks", "Automation", ]
+        listBox = Listbox(DataFrameRight, font=("times new roman", 12, "bold"), width=25, height=15)
         listBox.grid(row=0, column=0, padx=4)
 
         # configuration of the scrollbar
         listscrollbar.config(command=listBox.yview)
+
+        for item in listbooks:
+            listBox.insert(END, item)
+
 
         # ======================Information Desk======================
 
