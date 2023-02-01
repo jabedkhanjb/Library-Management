@@ -147,12 +147,14 @@ class LibraryManagement:
 
         # ============================DataFrame Right Inside============================
         self.txtBox = Text(DataFrameRight, font=("time new roman", 12, "bold"),
-                           width=30, height=15, padx=2, pady=6)
-        self.txtBox.grid(row=0, column=4)
+                           width=30, height=15)
+        self.txtBox.grid(row=0, column=4, padx=4, pady=6)
 
         listbooks = ["Python Crash Course", "Programming with Jabed", "CS50 Python", "Steve Jobs",
                      "Love for imperfect things", "Machine Learning", "Jupyter Notebook", "Numpy Tutorial",
                      "Opencv Python"]
+        listbox = Listbox(DataFrameRight, font=("times new roman", 12, "bold"), width=20, height=16)
+        listbox.grid(row=0, column=0, padx=4)
 
         # ======================Information Desk======================
 
