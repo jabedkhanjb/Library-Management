@@ -156,7 +156,7 @@ class LibraryManagement:
 
         listbooks = ["Python Crash Course", "Programming with Jabed", "CS50 Python", "Steve Jobs",
                      "Love for imperfect things", "Machine Learning", "Jupyter Notebook", "Numpy Tutorial",
-                     "Opencv Python", "Compiler Design", "Computer Networks", "Automation", ]
+                     "Opencv Python", "Compiler Design", "Computer Networks", "Automation", "Anaconda3", "Object Oriented Programming"]
         listBox = Listbox(DataFrameRight, font=("times new roman", 12, "bold"), width=25, height=15)
         listBox.grid(row=0, column=0, padx=4)
 
