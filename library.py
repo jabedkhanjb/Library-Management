@@ -150,11 +150,18 @@ class LibraryManagement:
                            width=30, height=15)
         self.txtBox.grid(row=0, column=4, padx=4, pady=6)
 
+        # ====================Scroll bar Right Frame list====================
+        listscrollbar = Scrollbar(DataFrameRight)
+        listscrollbar.grid(row=0, column=1, sticky="ns")  # ns for north-south, direction of scrollbar
+
         listbooks = ["Python Crash Course", "Programming with Jabed", "CS50 Python", "Steve Jobs",
                      "Love for imperfect things", "Machine Learning", "Jupyter Notebook", "Numpy Tutorial",
                      "Opencv Python"]
-        listbox = Listbox(DataFrameRight, font=("times new roman", 12, "bold"), width=20, height=16)
-        listbox.grid(row=0, column=0, padx=4)
+        listBox = Listbox(DataFrameRight, font=("times new roman", 12, "bold"), width=20, height=16)
+        listBox.grid(row=0, column=0, padx=4)
+
+        # configuration of the scrollbar
+        listscrollbar.config(command=listBox.yview)
 
         # ======================Information Desk======================
 
