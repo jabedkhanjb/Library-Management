@@ -152,7 +152,7 @@ class LibraryManagement:
 
         # ====================Scroll bar Right Frame list====================
         listscrollbar = Scrollbar(DataFrameRight)
-        listscrollbar.grid(row=0, column=1)  # ns for north-south, direction of scrollbar
+        listscrollbar.grid(row=0, column=1, sticky="ns")  # ns for north-south, direction of scrollbar
 
         listbooks = ["Python Crash Course", "Programming with Jabed", "CS50 Python", "Steve Jobs",
                      "Love for imperfect things", "Machine Learning", "Jupyter Notebook", "Numpy Tutorial",
