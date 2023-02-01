@@ -145,6 +145,11 @@ class LibraryManagement:
         txtprice = Entry(DataFrameLeft, font=("times new roman", 12), width=25)
         txtprice.grid(row=8, column=5)
 
+        # ============================DataFrame Right============================
+        DataFrameRight = LabelFrame(frame, bd=12, padx=20, relief=RIDGE, bg="powder blue",
+                                    font=("time new roman", 12, "bold"))
+
+
         # ======================Information Desk======================
 
         # =======================Buttons Frame=======================
