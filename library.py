@@ -19,10 +19,10 @@ class LibraryManagement:
         DataFrameLeft = LabelFrame(frame, text="Library Membership Information", bg="powder blue", fg="green", bd=5,
                                    relief=RIDGE, font=("times new roman", 12, "bold"))
         DataFrameLeft.place(x=0, y=5, width=750, height=340)
-
-        DateFrameRight = LabelFrame(frame, text="Book Details", bg="powder blue", fg="green", bd=5,
+        # ======================= DataFrame Right Right =======================
+        DataFrameRight = LabelFrame(frame, text="Book Details", bg="powder blue", fg="green", bd=5,
                                     relief=RIDGE, font=("times new roman", 12, "bold"))
-        DateFrameRight.place(x=810, y=5, width=490, height=340)
+        DataFrameRight.place(x=810, y=5, width=490, height=340)
         # ============================= Membership option =============================
         labelMember = Label(DataFrameLeft, text="Member Type", bg="powder blue", font=("times new roman", 12, "bold"),
                             padx=2, pady=6)
@@ -145,10 +145,13 @@ class LibraryManagement:
         txtprice = Entry(DataFrameLeft, font=("times new roman", 12), width=25)
         txtprice.grid(row=8, column=5)
 
-        # ============================DataFrame Right============================
-        DataFrameRight = LabelFrame(frame, bd=12, padx=20, relief=RIDGE, bg="powder blue",
-                                    font=("time new roman", 12, "bold"))
+        # ============================DataFrame Right Inside============================
+        self.txtBox = Text(DataFrameRight, font=("time new roman", 12, "bold"),
+                           width=30, height=15, padx=2, pady=6)
+        self.txtBox.grid(row=0, column=4)
 
+        listbooks = ["Python Crash Course", "Programming with Jabed", "CS50 Python", "Steve Jobs",
+                     "Love for imperfect things", "Machine Learning", "Jupyter Notebook", ""]
 
         # ======================Information Desk======================
 
