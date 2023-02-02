@@ -157,7 +157,8 @@ class LibraryManagement:
         listbooks = ["Python Crash Course", "Programming with Jabed", "CS50 Python", "Steve Jobs",
                      "Love for imperfect things", "Machine Learning", "Jupyter Notebook", "Numpy Tutorial",
                      "Opencv Python", "Compiler Design", "Computer Networks", "Automation", "Anaconda3",
-                     "Object Oriented Program", "Structure Programming", "Software Engineering", "Theory of Computation",
+                     "Object Oriented Program", "Structure Programming", "Software Engineering",
+                     "Theory of Computation",
                      "Data Structure", "Electronics-1", "Multimedia", "Operation System", "Peripheral",
                      "Visual Programming", "Algorithm Design", "Assembly Language", "Microprocessor"]
         listBox = Listbox(DataFrameRight, font=("times new roman", 12, "bold"), width=25, height=15)
@@ -168,7 +169,6 @@ class LibraryManagement:
 
         for item in listbooks:
             listBox.insert(END, item)
-
 
         # =======================Buttons Frame=======================
         FrameButton = Frame(self.root, bd=12, relief=RIDGE, padx=20, bg="powder blue")
@@ -198,33 +198,26 @@ class LibraryManagement:
         FrameData.place(x=0, y=500, width=1365, height=230)
 
         tableframe = Frame(FrameData, bd=4, relief=RIDGE, bg="powder blue")
-        tableframe.place(x=0, y=6, width=1300, height=200)
+        tableframe.place(x=0, y=6, width=1300, height=190)
+
+        self.library_table = ttk.Treeview(tableframe, column=("membertype", "prnno", "title", "fistname",
+                                                              "lastname", "address 1", "address 2", "postid",
+                                                              "booktitle", "auther", "dateborrowed", "datedue",
+                                                              "days", "latereturnfine", "dateoverdue", "finalprice"))
+
+        self.library_table.heading("membertype", text="Member Type")
+        self.library_table.heading("prnno", text="PRN No")
+        self.library_table.heading("title", text="Title")
+        self.library_table.heading("prnno", text="PRN No")
+        self.library_table.heading("membertype", text="Member Type")
+        self.library_table.heading("prnno", text="PRN No")
+        self.library_table.heading("membertype", text="Member Type")
+        self.library_table.heading("prnno", text="PRN No")
+        self.library_table.heading("membertype", text="Member Type")
+        self.library_table.heading("prnno", text="PRN No")
+
 
 if __name__ == "__main__":
     root = Tk()
     obj = LibraryManagement(root)
     root.mainloop()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
