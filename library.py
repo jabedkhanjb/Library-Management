@@ -175,13 +175,30 @@ class LibraryManagement:
         FrameButton.place(x=0, y=450, width=1365, height=70)
 
         btnaddData = Button(FrameButton, text="Add Data", font=("times new roman", 12, "bold"),
-                            width=15, bg="#77fa05", fg="blue")
-        btnaddData.grid(row=0, column=0, pady=2)
+                            width=20, bg="#cdcdcd", fg="#2e325c")
+        btnaddData.grid(row=0, column=0, padx=15, pady=2)
+        btnaddData = Button(FrameButton, text="Show Data", font=("times new roman", 12, "bold"),
+                            width=20, bg="#cdcdcd", fg="#2e325c")
+        btnaddData.grid(row=0, column=1, padx=15, pady=2)
+        btnaddData = Button(FrameButton, text="Update", font=("times new roman", 12, "bold"),
+                            width=20, bg="#cdcdcd", fg="#2e325c")
+        btnaddData.grid(row=0, column=2, padx=15, pady=2)
+        btnaddData = Button(FrameButton, text="Delete", font=("times new roman", 12, "bold"),
+                            width=20, bg="#cdcdcd", fg="#2e325c")
+        btnaddData.grid(row=0, column=3, padx=15, pady=2)
+        btnaddData = Button(FrameButton, text="Reset", font=("times new roman", 12, "bold"),
+                            width=20, bg="#cdcdcd", fg="#2e325c")
+        btnaddData.grid(row=0, column=4, padx=15, pady=2)
+        btnaddData = Button(FrameButton, text="Exit", font=("times new roman", 12, "bold"),
+                            width=20, bg="#cdcdcd", fg="#2e325c")
+        btnaddData.grid(row=0, column=5, padx=15, pady=2)
 
         # =======================Database Info Frame=======================
         FrameData = Frame(self.root, bd=12, relief=RIDGE, padx=20, bg="powder blue")
         FrameData.place(x=0, y=500, width=1365, height=230)
 
+        tableframe = Frame(FrameData, bd=4, relief=RIDGE, bg="powder blue")
+        tableframe.place(x=0, y=2, width=1080, height=150)
 
 if __name__ == "__main__":
     root = Tk()
