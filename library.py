@@ -198,7 +198,7 @@ class LibraryManagement:
         FrameData.place(x=0, y=500, width=1365, height=230)
 
         tableframe = Frame(FrameData, bd=4, relief=RIDGE, bg="powder blue")
-        tableframe.place(x=0, y=6, width=1310, height=200)
+        tableframe.place(x=0, y=6, width=130, height=200)
 
 if __name__ == "__main__":
     root = Tk()
