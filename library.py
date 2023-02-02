@@ -175,7 +175,7 @@ class LibraryManagement:
         FrameButton.place(x=0, y=450, width=1365, height=70)
 
         btnaddData = Button(FrameButton, text="Add Data", font=("times new roman", 12, "bold"),
-                            width=15, bg="#f0f653", fg="blue")
+                            width=15, bg="#77fa05", fg="blue")
         btnaddData.grid(row=0, column=0, pady=2)
 
         # =======================Database Info Frame=======================
