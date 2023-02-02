@@ -200,7 +200,7 @@ class LibraryManagement:
         tableframe = Frame(FrameData, bd=4, relief=RIDGE, bg="powder blue")
         tableframe.place(x=0, y=6, width=1300, height=190)
 
-        self.library_table = ttk.Treeview(tableframe, column=("membertype", "prnno", "title", "fistname",
+        self.library_table = ttk.Treeview(tableframe, column=("membertype", "prnno", "title", "firstname",
                                                               "lastname", "address 1", "address 2", "postid",
                                                               "booktitle", "auther", "dateborrowed", "datedue",
                                                               "days", "latereturnfine", "dateoverdue", "finalprice"))
@@ -208,7 +208,7 @@ class LibraryManagement:
         self.library_table.heading("membertype", text="Member Type")
         self.library_table.heading("prnno", text="PRN No")
         self.library_table.heading("title", text="Title")
-        self.library_table.heading("prnno", text="PRN No")
+        self.library_table.heading("firstname", text="First Name")
         self.library_table.heading("membertype", text="Member Type")
         self.library_table.heading("prnno", text="PRN No")
         self.library_table.heading("membertype", text="Member Type")
