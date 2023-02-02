@@ -169,15 +169,14 @@ class LibraryManagement:
         for item in listbooks:
             listBox.insert(END, item)
 
-        # jabedkhanjb // break Line 172, 2.Feb.2023
-
-
-
-        # ======================Information Desk======================
 
         # =======================Buttons Frame=======================
         FrameButton = Frame(self.root, bd=12, relief=RIDGE, padx=20, bg="powder blue")
         FrameButton.place(x=0, y=450, width=1365, height=70)
+
+        btnaddData = Button(FrameButton, text="Add Data", font=("times new roman", 12, "bold"),
+                            width=15, bg="#f0f653", fg="blue")
+        btnaddData.grid(row=0, column=0, pady=2)
 
         # =======================Database Info Frame=======================
         FrameData = Frame(self.root, bd=12, relief=RIDGE, padx=20, bg="powder blue")
@@ -188,3 +187,27 @@ if __name__ == "__main__":
     root = Tk()
     obj = LibraryManagement(root)
     root.mainloop()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
