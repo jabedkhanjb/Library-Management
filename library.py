@@ -200,10 +200,22 @@ class LibraryManagement:
         tableframe = Frame(FrameData, bd=4, relief=RIDGE, bg="powder blue")
         tableframe.place(x=0, y=6, width=1300, height=190)
 
+        xscroll = ttk.Scrollbar(tableframe, orient=HORIZONTAL)
+        yscroll = ttk.Scrollbar(tableframe, orient=VERTICAL)
+
         self.library_table = ttk.Treeview(tableframe, column=("membertype", "prnno", "title", "firstname",
                                                               "lastname", "address1", "address2", "postid",
-                                                              "booktitle", "auther", "dateborrowed", "datedue",
-                                                              "days", "latereturnfine", "dateoverdue", "finalprice"))
+                                                              "booktitle", "author", "dateborrowed", "datedue",
+                                                              "days", "latereturnfine", "dateoverdue", "finalprice"),
+                                          xscrollcommand=xscroll.set, yscrollcommand=yscroll.set)
+        xscroll.pack(side=BOTTOM, fill=X)
+        yscroll.pack(side=RIGHT, fill=Y)
+
+        # ----- Config Scroll to make it visible-----
+        xscroll.config(command=self.library_table.xview)
+        yscroll.config(command=self.library_table.yview)
+
+
 
         self.library_table.heading("membertype", text="Member Type")
         self.library_table.heading("prnno", text="PRN No")
@@ -212,12 +224,148 @@ class LibraryManagement:
         self.library_table.heading("lastname", text="Last Name")
         self.library_table.heading("address1", text="Address 1")
         self.library_table.heading("address2", text="Address 2")
-        self.library_table.heading("prnno", text="PRN No")
-        self.library_table.heading("membertype", text="Member Type")
-        self.library_table.heading("prnno", text="PRN No")
+        self.library_table.heading("postid", text="Post ID")
+        self.library_table.heading("booktitle", text="Book Title")
+        self.library_table.heading("author", text="Author")
+        self.library_table.heading("dateborrowed", text="Date Borrowed")
+        self.library_table.heading("datedue", text="Date Due")
+        self.library_table.heading("days", text="Days")
+        self.library_table.heading("latereturnfine", text="Late Return Fine")
+        self.library_table.heading("dateoverdue", text="Date Over Due")
+        self.library_table.heading("finalprice", text="Final Price")
+
+        self.library_table["show"] = "headings"
+        self.library_table.pack(fill=BOTH, expand=1)
 
 
 if __name__ == "__main__":
     root = Tk()
     obj = LibraryManagement(root)
     root.mainloop()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
