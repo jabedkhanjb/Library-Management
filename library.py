@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import ttk
-
+import mysql.connector
 
 class LibraryManagement:
     def __init__(self, root):
@@ -215,8 +215,6 @@ class LibraryManagement:
         xscroll.config(command=self.library_table.xview)
         yscroll.config(command=self.library_table.yview)
 
-
-
         self.library_table.heading("membertype", text="Member Type")
         self.library_table.heading("prnno", text="PRN No")
         self.library_table.heading("title", text="Title")
@@ -236,6 +234,24 @@ class LibraryManagement:
 
         self.library_table["show"] = "headings"
         self.library_table.pack(fill=BOTH, expand=1)
+
+        # ==============Database frame table width setting===============
+        self.library_table.column("membertype", width=100)
+        self.library_table.column("prnno", width=100)
+        self.library_table.column("title", width=100)
+        self.library_table.column("firstname", width=100)
+        self.library_table.column("lastname", width=100)
+        self.library_table.column("address1", width=100)
+        self.library_table.column("address2", width=100)
+        self.library_table.column("postid", width=100)
+        self.library_table.column("booktitle", width=100)
+        self.library_table.column("author", width=100)
+        self.library_table.column("dateborrowed", width=100)
+        self.library_table.column("datedue", width=100)
+        self.library_table.column("days", width=100)
+        self.library_table.column("latereturnfine", width=100)
+        self.library_table.column("dateoverdue", width=100)
+        self.library_table.column("finalprice", width=100)
 
 
 if __name__ == "__main__":
