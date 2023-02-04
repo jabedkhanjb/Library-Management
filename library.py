@@ -1,7 +1,8 @@
 from tkinter import *
 from tkinter import ttk
 import mysql.connector
-
+from tkinter import messagebox
+import datetime
 
 class LibraryManagement:
     def __init__(self, root):
@@ -185,7 +186,28 @@ class LibraryManagement:
                      "Theory of Computation",
                      "Data Structure", "Electronics-1", "Multimedia", "Operation System", "Peripheral",
                      "Visual Programming", "Algorithm Design", "Assembly Language", "Microprocessor"]
+        def SelectBook(event=""):
+            value = str(listBox.get(listBox.curselection()))
+            x = value
+            if x == "Python Crash Course":
+                self.bookid_var.set("PCC22")
+                self.booktitle_var.set("Short Course")
+                self.author_var.set("Eric Matthes")
+
+                d1 = datetime.datetime.today()
+                d2 = datetime.datetime(days=15)
+                d3 = d1 + d2
+                self.dateborrowed_var.set(d1)
+                self.datedue_var.set(d3)
+                self.daysonbook_var.set(15)
+                self.latereturnfine_var.set("100 TK")
+                self.dateoverdue_var.set("NO")
+                self.actualprice_var.set("1200 TK")
+
+
+
         listBox = Listbox(DataFrameRight, font=("times new roman", 12, "bold"), width=25, height=15)
+        listBox.bind("<<ListboxSelect>>", SelectBook)
         listBox.grid(row=0, column=0, padx=4)
 
         # configuration of the scrollbar
@@ -198,7 +220,7 @@ class LibraryManagement:
         FrameButton = Frame(self.root, bd=12, relief=RIDGE, padx=20, bg="powder blue")
         FrameButton.place(x=0, y=450, width=1365, height=70)
 
-        btnaddData = Button(FrameButton, text="Add Data", font=("times new roman", 12, "bold"),
+        btnaddData = Button(FrameButton, command=self.ADD_DATA, text="Add Data", font=("times new roman", 12, "bold"),
                             width=20, bg="#cdcdcd", fg="#2e325c")
         btnaddData.grid(row=0, column=0, padx=15, pady=2)
         btnaddData = Button(FrameButton, text="Show Data", font=("times new roman", 12, "bold"),
@@ -278,9 +300,51 @@ class LibraryManagement:
         self.library_table.column("finalprice", width=100)
 
     # =================== add data function===============
-
+    def ADD_DATA(self):
+        connect = mysql.connector.connect(host="localhost", username="root",
+                                          password="jabedkhanjb", database="library_management_system")
+        my_cursor = connect.cursor()
+        my_cursor.execute("insert into library values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",
+                          (self.member_var.get(),
+                           self.prn_var.get(),
+                           self.id_var.get(),
+                           self.firstname_var.get(),
+                           self.lastname_var.get(),
+                           self.address1_var.get(),
+                           self.address2_var.get(),
+                           self.postcode_var.get(),
+                           self.mobile_var.get(),
+                           self.bookid_var.get(),
+                           self.booktitle_var.get(),
+                           self.author_var.get(),
+                           self.dateborrowed_var.get(),
+                           self.datedue_var.get(),
+                           self.daysonbook_var.get(),
+                           self.latereturnfine_var.get(),
+                           self.dateoverdue_var.get(),
+                           self.actualprice_var.get(),
+                           ))
+        connect.commit()
+        connect.close()
+        messagebox.showinfo("Success", "Member has been inserted successfully")
 
 if __name__ == "__main__":
     root = Tk()
     obj = LibraryManagement(root)
     root.mainloop()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
