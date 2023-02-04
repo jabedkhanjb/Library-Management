@@ -8,6 +8,8 @@ class LibraryManagement:
         self.root.title("Library Management System")
         self.root.geometry("1365x767+0+0")
 
+        # ======================= Variable ======================
+
         labeltitle = Label(self.root, text="LIBRARY MANAGEMENT SYSTEM", bg="powder blue", fg="green", bd=10,
                            relief=RIDGE, font=("times new roman", 30, "bold"), padx=2, pady=6)
         labeltitle.pack(side=TOP, fill=X)
