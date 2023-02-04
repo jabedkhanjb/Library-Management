@@ -191,11 +191,11 @@ class LibraryManagement:
             x = value
             if x == "Python Crash Course":
                 self.bookid_var.set("PCC22")
-                self.booktitle_var.set("Short Course")
+                self.booktitle_var.set("Python Crash Course")
                 self.author_var.set("Eric Matthes")
 
                 d1 = datetime.datetime.today()
-                d2 = datetime.datetime(days=15)
+                d2 = datetime.timedelta(days=15)
                 d3 = d1 + d2
                 self.dateborrowed_var.set(d1)
                 self.datedue_var.set(d3)
@@ -301,12 +301,12 @@ class LibraryManagement:
 
     # =================== add data function===============
     def ADD_DATA(self):
-        connect = mysql.connector.connect(host="localhost", username="root",
-                                          password="jabedkhanjb", database="library_management_system")
+        connect = mysql.connector.connect(host="127.0.0.1", username="root",
+                                          password="jabedkhanjb", database="library")
         my_cursor = connect.cursor()
         my_cursor.execute("insert into library values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",
                           (self.member_var.get(),
-                           self.prn_var.get(),
+                           self.prn_var.get(), # verify input using regular expression
                            self.id_var.get(),
                            self.firstname_var.get(),
                            self.lastname_var.get(),
@@ -327,6 +327,7 @@ class LibraryManagement:
         connect.commit()
         connect.close()
         messagebox.showinfo("Success", "Member has been inserted successfully")
+
 
 if __name__ == "__main__":
     root = Tk()
