@@ -301,8 +301,10 @@ class LibraryManagement:
 
     # =================== add data function===============
     def ADD_DATA(self):
-        connect = mysql.connector.connect(host="127.0.0.1", username="root",
-                                          password="jabedkhanjb", database="library")
+        connect = mysql.connector.connect(host="127.0.0.1",
+                                          username="root",
+                                          password="jabedkhanjb",
+                                          database="library_management_system")
         my_cursor = connect.cursor()
         my_cursor.execute("insert into library values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",
                           (self.member_var.get(),
