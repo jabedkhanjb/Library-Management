@@ -13,7 +13,7 @@ class LibraryManagement:
         # ======================= Variable ======================
         self.member_var = StringVar()
         self.prn_var = StringVar()
-        self.id_var = IntVar()
+        self.id_var = StringVar()
         self.firstname_var = StringVar()
         self.lastname_var = StringVar()
         self.address1_var = StringVar()
@@ -299,10 +299,7 @@ class LibraryManagement:
 
     # =================== add data function===============
     def add_data(self):
-        connect = mysql.connector.connect(host="127.0.0.1:3306",
-                                          username="root",
-                                          password="jabedkhanjb",
-                                          database="library_management_system")
+        connect = mysql.connector.connect(host="127.0.0.1", username="root", password="jabedkhanjb", database="library_management_system")
         my_cursor = connect.cursor()
         my_cursor.execute("insert into library values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",
                           (self.member_var.get(),
