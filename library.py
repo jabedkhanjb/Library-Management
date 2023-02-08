@@ -13,7 +13,7 @@ class LibraryManagement:
         # ======================= Variable ======================
         self.member_var = StringVar()
         self.prn_var = StringVar()
-        self.id_var = StringVar()
+        self.id_var = IntVar()
         self.firstname_var = StringVar()
         self.lastname_var = StringVar()
         self.address1_var = StringVar()
@@ -204,8 +204,6 @@ class LibraryManagement:
                 self.dateoverdue_var.set("NO")
                 self.actualprice_var.set("1200 TK")
 
-
-
         listBox = Listbox(DataFrameRight, font=("times new roman", 12, "bold"), width=25, height=15)
         listBox.bind("<<ListboxSelect>>", SelectBook)
         listBox.grid(row=0, column=0, padx=4)
@@ -220,7 +218,7 @@ class LibraryManagement:
         FrameButton = Frame(self.root, bd=12, relief=RIDGE, padx=20, bg="powder blue")
         FrameButton.place(x=0, y=450, width=1365, height=70)
 
-        btnaddData = Button(FrameButton, command=self.ADD_DATA, text="Add Data", font=("times new roman", 12, "bold"),
+        btnaddData = Button(FrameButton, command=self.add_data, text="Add Data", font=("times new roman", 12, "bold"),
                             width=20, bg="#cdcdcd", fg="#2e325c")
         btnaddData.grid(row=0, column=0, padx=15, pady=2)
         btnaddData = Button(FrameButton, text="Show Data", font=("times new roman", 12, "bold"),
@@ -300,15 +298,15 @@ class LibraryManagement:
         self.library_table.column("finalprice", width=100)
 
     # =================== add data function===============
-    def ADD_DATA(self):
-        connect = mysql.connector.connect(host="127.0.0.1",
+    def add_data(self):
+        connect = mysql.connector.connect(host="127.0.0.1:3306",
                                           username="root",
                                           password="jabedkhanjb",
                                           database="library_management_system")
         my_cursor = connect.cursor()
         my_cursor.execute("insert into library values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",
                           (self.member_var.get(),
-                           self.prn_var.get(), # verify input using regular expression
+                           self.prn_var.get(),  # verify input using regular expression
                            self.id_var.get(),
                            self.firstname_var.get(),
                            self.lastname_var.get(),
