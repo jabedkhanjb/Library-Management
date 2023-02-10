@@ -4,6 +4,9 @@ import mysql.connector
 from tkinter import messagebox
 import datetime
 
+from Tools.scripts.make_ctype import values
+
+
 class LibraryManagement:
     def __init__(self, root):
         self.root = root
@@ -186,11 +189,11 @@ class LibraryManagement:
                      "Theory of Computation",
                      "Data Structure", "Electronics-1", "Multimedia", "Operation System", "Peripheral",
                      "Visual Programming", "Algorithm Design", "Assembly Language", "Microprocessor"]
-        def SelectBook(event=""):
+        def selectbook(event=""):
             value = str(listBox.get(listBox.curselection()))
             x = value
             if x == "Python Crash Course":
-                self.bookid_var.set("PCC22")
+                self.bookid_var.set("PCC001")
                 self.booktitle_var.set("Python Crash Course")
                 self.author_var.set("Eric Matthes")
 
@@ -204,8 +207,190 @@ class LibraryManagement:
                 self.dateoverdue_var.set("NO")
                 self.actualprice_var.set("1200 TK")
 
+            elif x == "Programming with Jabed":
+                self.bookid_var.set("PJB002")
+                self.booktitle_var.set("Programming with Jabed")
+                self.author_var.set("Mahfuz Islam Khan Jabed")
+
+                d1 = datetime.datetime.today()
+                d2 = datetime.timedelta(days=15)
+                d3 = d1 + d2
+                self.dateborrowed_var.set(d1)
+                self.datedue_var.set(d3)
+                self.daysonbook_var.set(15)
+                self.latereturnfine_var.set("100 TK")
+                self.dateoverdue_var.set("NO")
+                self.actualprice_var.set("1800 TK")
+
+            elif x == "CS50 Python":
+                self.bookid_var.set("CSP003")
+                self.booktitle_var.set("CS50 Python")
+                self.author_var.set("David Miller")
+
+                d1 = datetime.datetime.today()
+                d2 = datetime.timedelta(days=15)
+                d3 = d1 + d2
+                self.dateborrowed_var.set(d1)
+                self.datedue_var.set(d3)
+                self.daysonbook_var.set(15)
+                self.latereturnfine_var.set("100 TK")
+                self.dateoverdue_var.set("NO")
+                self.actualprice_var.set("2500 TK")
+
+            elif x == "Steve Jobs":
+                self.bookid_var.set("SJ004")
+                self.booktitle_var.set("Steve Jobs")
+                self.author_var.set("Karen Blumenthal")
+
+                d1 = datetime.datetime.today()
+                d2 = datetime.timedelta(days=15)
+                d3 = d1 + d2
+                self.dateborrowed_var.set(d1)
+                self.datedue_var.set(d3)
+                self.daysonbook_var.set(15)
+                self.latereturnfine_var.set("100 TK")
+                self.dateoverdue_var.set("NO")
+                self.actualprice_var.set("400 TK")
+
+            elif x == "Love for imperfect things":
+                self.bookid_var.set("LFIT005")
+                self.booktitle_var.set("Love for imperfect things")
+                self.author_var.set("Haemin Sunim")
+
+                d1 = datetime.datetime.today()
+                d2 = datetime.timedelta(days=15)
+                d3 = d1 + d2
+                self.dateborrowed_var.set(d1)
+                self.datedue_var.set(d3)
+                self.daysonbook_var.set(15)
+                self.latereturnfine_var.set("100 TK")
+                self.dateoverdue_var.set("NO")
+                self.actualprice_var.set("600 TK")
+
+            elif x == "Machine Learning":
+                self.bookid_var.set("ML006")
+                self.booktitle_var.set("Machine Learning")
+                self.author_var.set("Peter Harrington")
+
+                d1 = datetime.datetime.today()
+                d2 = datetime.timedelta(days=15)
+                d3 = d1 + d2
+                self.dateborrowed_var.set(d1)
+                self.datedue_var.set(d3)
+                self.daysonbook_var.set(15)
+                self.latereturnfine_var.set("100 TK")
+                self.dateoverdue_var.set("NO")
+                self.actualprice_var.set("3000 TK")
+
+            elif x == "Jupyter Notebook":
+                self.bookid_var.set("JY007")
+                self.booktitle_var.set("Jupyter Notebook")
+                self.author_var.set("Fernando Pérez & Brian Granger")
+
+                d1 = datetime.datetime.today()
+                d2 = datetime.timedelta(days=15)
+                d3 = d1 + d2
+                self.dateborrowed_var.set(d1)
+                self.datedue_var.set(d3)
+                self.daysonbook_var.set(15)
+                self.latereturnfine_var.set("100 TK")
+                self.dateoverdue_var.set("NO")
+                self.actualprice_var.set("2100 TK")
+
+            elif x == "Numpy Tutorial":
+                self.bookid_var.set("NP008")
+                self.booktitle_var.set("Numpy")
+                self.author_var.set("W3 School")
+
+                d1 = datetime.datetime.today()
+                d2 = datetime.timedelta(days=15)
+                d3 = d1 + d2
+                self.dateborrowed_var.set(d1)
+                self.datedue_var.set(d3)
+                self.daysonbook_var.set(15)
+                self.latereturnfine_var.set("100 TK")
+                self.dateoverdue_var.set("NO")
+                self.actualprice_var.set("1000 TK")
+
+            elif x == "Opencv Python":
+                self.bookid_var.set("CV009")
+                self.booktitle_var.set("Opencv Python")
+                self.author_var.set("W3 School")
+
+                d1 = datetime.datetime.today()
+                d2 = datetime.timedelta(days=15)
+                d3 = d1 + d2
+                self.dateborrowed_var.set(d1)
+                self.datedue_var.set(d3)
+                self.daysonbook_var.set(15)
+                self.latereturnfine_var.set("100 TK")
+                self.dateoverdue_var.set("NO")
+                self.actualprice_var.set("1000 TK")
+
+            elif x == "Compiler Design":
+                self.bookid_var.set("CD010")
+                self.booktitle_var.set("Compiler Design")
+                self.author_var.set("Alfred Aho")
+
+                d1 = datetime.datetime.today()
+                d2 = datetime.timedelta(days=15)
+                d3 = d1 + d2
+                self.dateborrowed_var.set(d1)
+                self.datedue_var.set(d3)
+                self.daysonbook_var.set(15)
+                self.latereturnfine_var.set("100 TK")
+                self.dateoverdue_var.set("NO")
+                self.actualprice_var.set("1300 TK")
+
+            elif x == "Computer Networks":
+                self.bookid_var.set("CN011")
+                self.booktitle_var.set("Computer Networks")
+                self.author_var.set("Jill West")
+
+                d1 = datetime.datetime.today()
+                d2 = datetime.timedelta(days=15)
+                d3 = d1 + d2
+                self.dateborrowed_var.set(d1)
+                self.datedue_var.set(d3)
+                self.daysonbook_var.set(15)
+                self.latereturnfine_var.set("100 TK")
+                self.dateoverdue_var.set("NO")
+                self.actualprice_var.set("900 TK")
+
+            elif x == "Automation":
+                self.bookid_var.set("AU012")
+                self.booktitle_var.set("Automation")
+                self.author_var.set("G.B. Gabbler")
+
+                d1 = datetime.datetime.today()
+                d2 = datetime.timedelta(days=15)
+                d3 = d1 + d2
+                self.dateborrowed_var.set(d1)
+                self.datedue_var.set(d3)
+                self.daysonbook_var.set(15)
+                self.latereturnfine_var.set("100 TK")
+                self.dateoverdue_var.set("NO")
+                self.actualprice_var.set("1400 TK")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         listBox = Listbox(DataFrameRight, font=("times new roman", 12, "bold"), width=25, height=15)
-        listBox.bind("<<ListboxSelect>>", SelectBook)
+        listBox.bind("<<ListboxSelect>>", selectbook)
         listBox.grid(row=0, column=0, padx=4)
 
         # configuration of the scrollbar
@@ -299,7 +484,8 @@ class LibraryManagement:
 
     # =================== add data function===============
     def add_data(self):
-        connect = mysql.connector.connect(host="127.0.0.1", username="root", password="jabedkhanjb", database="library_management_system")
+        connect = mysql.connector.connect(host="127.0.0.1", username="root", password="jabedkhanjb",
+                                          database="library_management_system")
         my_cursor = connect.cursor()
         my_cursor.execute("insert into library values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",
                           (self.member_var.get(),
